@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang=ja>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="VTuber紹介するサイトです。">
+    <title>ＮＥＷＳ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7d99ecd730.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.9/jquery.mb.YTPlayer.min.js" integrity="sha512-rVFx7vXgVV8cmgG7RsZNQ68CNBZ7GL3xTYl6GAVgl3iQiSwtuDjTeE1GESgPSCwkEn/ijFJyslZ1uzbN3smwYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
+    <script src="js/favorite-script.js"></script>
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav_wrap">
+            <div class="d_nav">
+                <div class="overlay"></div>
+                <ul class="nav_lists home" style="list-style: none">
+                    <li class="nav_list ref"><a href="../index.html">ＨＯＭＥ</a></li>
+                    <li class="nav_list blue"><span class="child-wrap"></span><span class="has-child"></span><a href="favorite.html">ＮＥＷＳ</a>
+                        <ul class="dropdown_lists blue" style="list-style: none">
+                            <li class="dropdown_list"><a href="favorite.html#what">VTuberとは</a></li>
+                            <li class="dropdown_list"><a href="favorite.html#music">おすすめの曲</a></li>
+                            <li class="dropdown_list"><a href="favorite.html#story">VTuberの魅力</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav_list home"><span class="child-wrap"></span><span class="has-child"></span><a href="home.html">ＭＥＮＵ</a>
+                        <ul class="dropdown_lists home" style="list-style: none">
+                            <li class="dropdown_list"><a href="home.html#profile">プロフィール</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="hamburger1">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!-- ヘッダーここまで-->
+    <div id="ytPlayerWrap">
+        <div id="ytPlayer" data-property="{
+			videoURL: 'QNW7yHDYldY',
+			containment: '#ytPlayerWrap', 
+			ratio: '21/9', // 比率を変更
+			autoPlay: true, 
+			loop: 1,
+			mute: true,
+			abundance: 0,
+			startAt: 0, 
+			showControls: false, 
+			showYTLogo: false 
+		}"></div>
+
+
+        <h1 class="hero favorite">VTuberの紹介</h1>
+    </div>
+    <!-- メイン -->
+    <main>
+        <div class="what">
+            <h2 id="what">VTuberとは</h2>
+            <div class="what-flex">
+                <img src="images/favorite/b1.jpg" alt="ブルーアーカイブの画像">
+                <div class="what-p">
+                    <p>
+                        初めにVTuberの紹介です「Vtuber」は、「VTuber（Virtual YouTuber）」 
+                        VTuberとは、2Dまたは3Dのバーチャルキャラクターを使って動画配信を行うYouTuberのことです。 
+                        特に日本では、2016年頃から「キズナアイ」などのVTuberが登場し、現在では多くのVTuberが活動しています。 VTuberはYouTubeだけでなく、Twitchやニコニコ動画などでも活動していることがあります。
+                    </p>
+                </div>
+            </div>
+            </p>
+        </div>
+        <div>
+            <h3 class="pvTitle">Kizuna AI</h3>
+            <div class="pvContainer">
+                <div class="youtube pv">
+                    <div id="teaser">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/NasyGUeNMTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="pvPromotion">
+                    <p>キズナアイは、2016年に登場した世界初のバーチャルYouTuber（VTuber）。3Dアニメーションのキャラクターとして活動し、YouTubeでの配信やゲーム実況を通じて人気を集めた。VTuber文化の先駆けで、多くの後続VTuberに影響を与えた存在。</p>
+                    <p><a href="https://x.com/aichan_nel?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 id="music">おすすめの曲</h2>
+            <div class="favorite_music">
+                <h3 class="musicTitle">いずれ菖蒲か杜若[にじさんじ]
+                </h3>
+                <div class="ytContainer">
+                    <div class="youtube">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/9P3kxfons2E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+                    <div class="musicPromotion">
+                        <p>「いずれ菖蒲か杜若（あやめかかきつばた）」は、にじさんじ所属のVTuberグループで、石神のぞみ、白雪巴、フミの3人からなるユニット。和風の世界観と美しさをテーマに活動し、歌や配信、イベント出演などで人気を集めている。
+                            <p><a href="https://x.com/nijisanji_app?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></p>
+                    </div>
+                </div>
+                <h3 class="musicTitle">SAKUNA YUKI</h3>
+                <div class="ytContainer reverse">
+                    <div class="youtube">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zbWEZDA3xZc?									si=XKy7OAsMwjlQnDfT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-							picture"
+                            allowfullscreen>
+						</iframe>
+                    </div>
+                    <div class="musicPromotion">
+                        <p>結城さくなは、2024年10月27日にデビューした個人勢VTuberで、初配信では最大同時接続者数38万人を記録し、VTuber史上歴代3位、初配信としては過去最大となりました 。
+                            ​初配信当日に登録者数は75万人を超え 、​その後も急速に増加し、現在では104万人を突破しています 。​彼女はゲームと歌が好きな人見知りな女の子で、一流メイドを目指して活動しています 。
+                            ​YouTubeチャンネル「Sakuna Ch. 結城さくな」では、ゲーム実況や歌ってみた動画、雑談配信など多彩なコンテンツを楽しむことができます。​特に『原神』の完全初見プレイや、リスナー参加型の企画配信などが人気です。
+                            ​彼女の魅力的なキャラクターと多彩な配信内容は、多くのファンを惹きつけています</p>
+                        <p><a href="https://x.com/yuki_sakuna">Twitter</a></p>
+                    </div>
+                </div>
+                <h3 class="musicTitle">SHIGURE UI</h3>
+                <div class="ytContainer">
+                    <div class="youtube">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZFgnRanCh4I?si=DPC5azbVAs0VRVQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 						encrypted-			media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="musicPromotion">
+                        <p>しぐれういは、イラストレーターやVtuberとして活躍する人気クリエイターです。彼女の作品は、可愛らしさと繊 細なタッチが特徴で、多くのファンに愛されています。明るくユーモアのあるキャラクターで、配信やコラボでも多彩 な才能を発揮中！癒しと笑顔を届けてくれるしぐれういの魅力を、ぜひあなたも体感してみてください！
+                        </p>
+                        <p><a href="https://x.com/ui_shig?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></p>
+                    </div>
+                </div>
+
+                <h3 class="musicTitle">NERUNE</h3>
+                <div class="ytContainer reverse">
+                    <div class="youtube">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dTyKAqWsTCc?									si=Gp1Cy0tqssAiuyD9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 					clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="musicPromotion">
+                        <p>30代になった、NERUNEおすすめかな？気が向いたらどうぞ
+                        </p>
+                        <p><a href="https://x.com/NERU32989900">Twitter</a></p>
+                    </div>
+                </div>
+                <h3 class="musicTitle">KUROE SAKAMATA</h3>
+                <div class="ytContainer">
+                    <div class="youtube">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/NmVGKfz0MEs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="musicPromotion">
+                        <p>沙花叉クロヱはホロライブ6期生「holoX」のメンバーで、“掃除屋”のインターンというユニークな設定が魅力。高い歌唱力と多彩な配信スタイルで人気を集め、卒業後も動画や楽曲で彼女の魅力に触れられる。必見のVTuber。</p>
+                        <p><a href="https://x.com/sakamatachloe?lang=ja">Twitter</a></p>
+                    </div>
+                </div>
+                <h3 class="musicTitle">Makai En Ch.</h3>
+                <div class="ytContainer reverse">
+                    <div class="youtube">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vOvgryUomj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                    </div>
+                    <div class="musicPromotion">
+                        <p>魔灰えんは「魔界の案内人、飽く迄悪魔」を名乗る個人勢VTuber。Twitchでのゲーム配信や、YouTubeでの高クオリティな歌ってみた動画が人気。独自の世界観と表現力に魅了されるファンが多数。XやTikTokでも活動中。個人勢ならではの距離感と自由さが魅力で、癒しと刺激を求める人におすすめ。ファンとの交流も大切にしており、誰でも気軽に“えん界”に飛び込める。推し活初心者にもぴったりの注目VTuber。
+                        </p>
+                        <p><a href="https://x.com/makaien_vtuber">Twitter</a></p>
+                    </div>
+                </div>
+                <h3 class="musicTitle">Hollo Live公式</h3>
+                <div class="ytContainer">
+                    <div class="youtube">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/3RxlzJWWzdY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                    </div>
+                    <div class="musicPromotion">
+                        <p>ホロライブ公式YouTubeチャンネルは、VTuber事務所「ホロライブプロダクション」
+                            が運営する公式チャンネルで、最新の動画やライブ配信、音楽コンテンツ、バラエティ番組などを発信しています。
+                            ​チャンネル登録者数は数百万人規模で、国内外のファンから高い支持を得ています。</p>
+                            <p><a href="https://x.com/hololivetv?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="ytContainer">
+                <div class="youtube">
+                    <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/9kQ2GtvDV3s"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>                  
+                </div>
+                <div class="youtube">
+                    <div>
+                        <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/vQOPE6kHeoU"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                      </div>                      
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 id="story">VTuberの魅力</h2>
+                <div class="goodPoint">
+                    <h3> キャラクター性と没入感</h3>
+                    <p>Vtuberは、アバターを通じて個性的なキャラクターを演じられるのが特徴。リアルな配信者と違って、
+                        外見や年齢に縛られず、自分の理想の姿になれるから、ファンタジーの世界に入り込んだような感覚を楽しめる。
+                        視聴者もその世界観に没入しやすい！
+                    </p>
+                    <h3>エンタメ性の高さ</h3>
+                    <p>ゲーム実況、歌ってみた、雑談、ASMRなど、多彩なコンテンツを提供できる。2Dや3Dモデルを使ってダンスしたり、
+                        独自の企画を考えたりと、リアルの配信者ではできないことも可能！MMDが得意なら、オリジナルの3DライブやMV制作も強みになるよね。
+                    </p>
+                    <h3>ファンとの距離の近さ</h3>
+                    <p>リアルのアイドルやタレントと違い、Vtuberは配信で視聴者と直接交流できるのが魅力。コメントを読んだり、お便り企画をしたり、
+                        TwitterやDiscordでコミュニケーションを取ることで、強いファンコミュニティを作れる。
+                    </p>
+                    <h3>匿名性と自由度</h3>
+                    <p>顔を出さなくても活動できるから、プライバシーを守りつつ、創作や表現を自由に楽しめる。リアルの見た目に縛られず、
+                        自分の「なりたい自分」で活動できるのも大きなポイント。
+                    </p>
+                    <h3>技術の進化と可能性</h3>
+                    <p>VR・AR技術やAIの進化によって、Vtuberの表現の幅はどんどん広がってる。モーションキャプチャーや3Dモデルの進化で、
+                        まるで本物のアイドルみたいなパフォーマンスも可能になってきてるし、新しい技術を取り入れることで、他と差別化もできる！
+
+                        特に、MMDをマスターしてるなら、3Dライブやモーション演出でオリジナリティを出せるし、技術力の高さもアピールポイントになるね！Vtuber業界での活動をもっと広げたいなら、どんな方向性を目指したいか考えてみるのもアリかも？
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- メインここまで -->
+    <!-- フッター -->
+    <footer>
+        <p>&copy;ＮＫ</p>
+    </footer>
+    <!-- フッターここまで -->
+    <script>
+    </script>
+</body>
+
+</html>

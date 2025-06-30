@@ -1,0 +1,1177 @@
+/* すべてのページに適用される設定 */
+
+html {
+    font-size: 16px;
+    font-family: sans-serif;
+    /* タイトル見出しは個別に設定する h2タグにWebフォントを使用*/
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.5s;
+    z-index: 100;
+}
+
+.header.js_hide {
+    transform: translateY(-900%);
+}
+
+body {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+#ytPlayerWrap {
+    width: 120%;
+    /* 画面を広げる */
+    height: 120vh;
+    /* 高さも調整 */
+    position: relative;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+th,
+td {
+    font-size: 1.2em;
+    line-height: 1.7em;
+}
+
+p,
+li {
+    line-height: 1.7em;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+h2 {
+    padding: 0.5em;
+    /*文字周りの余白*/
+    color: #000000;
+    /*文字色*/
+    background: #fcfcfc;
+}
+
+
+/*Font Awesomeの初期設定*/
+
+.icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+a[target="_blank"]::after {
+    font: var(--fa-font-solid);
+    content: "\f08e";
+    margin: 0 0.25rem;
+}
+
+
+/* すべてのページに適用 - ヘッダー - */
+
+.nav_wrap {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav_lists {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.nav_list {
+    width: calc(100% / 3);
+    height: 60px;
+    background-color: #ffffff;
+    position: relative;
+    transition: all .3s;
+}
+
+.nav_list:not(:first-child)::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .3s;
+}
+
+.nav_list:hover::before {
+    background-color: #000000;
+}
+
+.nav_list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    transition: all .3s;
+}
+
+.hero__actions .btn{
+    padding: 6px 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.dropdown_lists {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.dropdown_list {
+    background-color: #00000056;
+    height: 60px;
+    transition: all .3s;
+    position: relative;
+}
+
+.dropdown_list:not(:first-child)::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.dropdown_list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eaeaea;
+    text-decoration: none;
+    position: relative;
+}
+
+.dropdown_list a::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid #080606;
+    border-left: 2px solid #fff;
+    transform: rotate(135deg);
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 5px);
+}
+
+.hamburger1 {
+    display: none;
+    position: fixed;
+    vertical-align: top;
+    background-color: #000000;
+    cursor: pointer;
+    top: 5px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.hamburger1 span {
+    display: inline-block;
+    transition: all .4s;
+    /*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    width: 45%;
+}
+
+.hamburger1 span:nth-of-type(1) {
+    top: 15px;
+}
+
+.hamburger1 span:nth-of-type(2) {
+    top: 23px;
+}
+
+.hamburger1 span:nth-of-type(3) {
+    top: 31px;
+}
+
+.hamburger1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.hamburger1.active span:nth-of-type(2) {
+    opacity: 0;
+    /*真ん中の線は透過*/
+}
+
+.hamburger1.active span:nth-of-type(3) {
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+.child-wrap {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: 69px;
+    background: #ececf0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+.has-child::before {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 22px;
+    right: 75px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #999;
+    border-right: 2px solid #999;
+    transform: rotate(135deg);
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+}
+
+.overlay.active {
+    display: block;
+}
+
+
+/* すべてのページに適用 - ヒーロー - */
+
+.hero {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* すべてのページに適用 - メイン - */
+
+main {
+    margin: 30px auto 90px auto;
+    max-width: 80%;
+}
+
+main h2 {
+    font-size: 30px;
+    font-family: 'BIZ UDPGothic', sans-serif;
+}
+
+
+/* すべてのページに適用 - フッター - */
+
+footer {
+    color: #FFF;
+    background-color: #000;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+}
+
+.inline {
+    display: inline-block;
+}
+
+
+/* 個別のスタイル */
+
+
+/* index.html */
+
+.hero.index {
+    color: #FFF;
+    background-image: url("../images/index/meinhextuta.jpg");
+    background-size: cover;
+    margin: 0 0 50px 0;
+    padding: 140px 0 80px 0;
+}
+
+.profile-info {
+    border-collapse: collapse;
+    width: 1200px;
+    max-width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.profile-info th,
+.profile-info td {
+    border: 1px solid #000;
+    padding: 20px;
+    text-align: center;
+    width: calc(100% / 3);
+}
+
+.profile-info th {
+    background-color: #D3DEF1;
+    vertical-align: top;
+}
+
+.sikaku {
+    text-decoration: none;
+}
+
+.hobbys {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.hobbys div a {
+    text-decoration: none;
+}
+
+.genshin {
+    text-align: center;
+    max-width: 300px;
+    height: auto;
+    padding: 20px;
+    display: block;
+}
+
+.blueArchive {
+    text-align: center;
+    max-width: 300px;
+    height: auto;
+    padding: 20px;
+    display: block;
+}
+
+
+/* favorite.html */
+
+#ytPlayerWrap {
+    display: block;
+    top: 60px;
+    width: 100%;
+    padding-bottom: 50%;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+#ytPlayer {
+    z-index: 1;
+}
+
+.hero.favorite {
+    position: absolute;
+    color: #000;
+    background-image: url(../images/favorite/menu.jpg);
+    background-size: cover;
+    background-position: 0 30%;
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    border-top: 3px solid #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: bottom;
+    z-index: 3;
+}
+
+.favo_index li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.favo_index li a:hover {
+    text-decoration: underline;
+}
+
+.what p {
+    max-width: 95%;
+    margin: 1.5em auto;
+}
+
+.what-flex {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    gap: 20px;
+}
+
+.what-flex img,
+.what-p {
+    flex: 1;
+    max-width: 50%;
+}
+
+.what-flex img {
+    object-fit: contain;
+}
+
+.what-p {
+    padding: 0.5em 1em;
+    margin: 2em auto;
+    border: double 5px #d1e6e8;
+    height: 50%;
+}
+
+.ao {
+    color: #ffffff;
+}
+
+.musicTitle {
+    position: relative;
+    color: #505050;
+    /*文字色*/
+    padding: 0.5em;
+    /*文字周りの余白*/
+    display: inline-block;
+    /*おまじない*/
+    line-height: 1.3;
+    /*行高*/
+    background: #dbebf8;
+    /*背景色*/
+    vertical-align: middle;
+    border-radius: 25px 0px 0px 25px;
+    /*左側の角を丸く*/
+    margin: 0 auto 10px auto;
+    padding-right: 20px;
+    left: 20px;
+}
+
+.musicTitle::before {
+    content: '●';
+    color: white;
+    margin-right: 8px;
+}
+
+.ytContainer {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    max-width: 95%;
+    align-items: center;
+    margin: 0 auto 40px auto;
+    gap: 20px;
+}
+
+.ytContainer.reverse {
+    flex-direction: row-reverse;
+}
+
+.ytContainer .youtube,
+.musicPromotion {
+    flex: 1;
+    max-width: 40%;
+}
+
+.ytContainer .youtube {
+    min-width: max(40%, 350px);
+}
+
+.youtube {
+    position: relative;
+    width: 100%;
+    left: 0;
+    padding-top: max(22.55%, 197px);
+    margin: 0;
+    overflow: hidden;
+}
+
+.youtube div::after {
+    position: absolute;
+    font: var(--fa-font-brands);
+    content: "\f167";
+    font-size: 3.6em;
+    color: #FF0000;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.youtube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.youtube div img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.musicPromotion {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding: 0.5em 1em;
+    margin: 0;
+    font-weight: bold;
+    color: #000000;
+    /*文字色*/
+    background: #FFF;
+    border: solid 3px #aeb9bd;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+}
+
+.djContainer {
+    flex: 1;
+    max-width: 40%;
+    display: block;
+    position: relative;
+}
+
+.musicPromotion p {
+    margin: 0;
+    padding: 0;
+}
+
+.chara_text {
+    margin: auto;
+    width: 95%;
+}
+
+#hina {
+    display: block;
+    max-width: 400px;
+    width: 80%;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.blue_profile {
+    text-align: center;
+    display: flex;
+    margin: 10px auto;
+    border-radius: 10px;
+    /*角の丸み*/
+    border: 2px solid #1e5c3f;
+    transition: all .3s;
+}
+
+.blue_profile a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 5px 20px;
+}
+
+.blue_profile a:visited {
+    color: #ffffff;
+}
+
+.storyContainer p {
+    max-width: 95%;
+    margin: 10px auto;
+}
+
+.goodPoint h3 {
+    display: inline-block;
+    background: linear-gradient(transparent 70%, #a7d6ff 70%);
+    font-size: 1.1em;
+    margin-left: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.goodPoint p {
+    max-width: 85%;
+    margin: 10px auto;
+}
+
+.pvTitle {
+    display: inline-block;
+    background: linear-gradient(transparent 70%, #e5e9ec 70%);
+    font-size: 1.5em;
+    margin-left: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.text {
+    max-width: 95%;
+    margin: 10px auto;
+}
+
+.pvContainer {
+    text-align: center;
+}
+
+.youtube.pv {
+    width: 80%;
+    padding-top: 45%;
+    margin: 10px auto;
+}
+
+.youtube.pv div::after {
+    font-size: 4.8em;
+}
+
+.pvPromotion {
+    position: relative;
+    text-align: center;
+    max-width: 630px;
+    width: 80%;
+    padding: 0.5em 1em;
+    margin: 20px auto;
+    font-weight: bold;
+    color: #2e8849;
+    /*文字色*/
+    background: #FFF;
+    border: solid 3px #1a643b;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+}
+
+.pvPromotion p {
+    margin: 0 auto;
+}
+
+.animeContainer p {
+    max-width: 95%;
+    margin: 10px auto;
+}
+
+.ope {
+    display: inline-block;
+    margin-left: 20px;
+    color: #24925e;
+    /*文字色*/
+    /*線の種類（点線）2px 線色*/
+    border-bottom: dashed 2px #2658a8;
+    margin-bottom: 5px;
+}
+
+#twitter::after {
+    display: inline-block;
+    font: var(--fa-font-brands);
+    content: "\f099";
+    margin: 0 0.25em;
+}
+
+#blue_youtube::after {
+    display: inline-block;
+    font: var(--fa-font-brands);
+    content: "\f167";
+    color: #FF0000;
+    margin: 0 0.25em;
+}
+
+.twitter-flex {
+    display: flex;
+}
+
+.twitter-flex p {
+    max-width: 50%;
+    padding: 20px;
+    margin: 0 auto 0 2%;
+}
+
+.twitter-flex p,
+.twitter-flex .timeline {
+    flex: 1;
+}
+
+.timeline {
+    position: relative;
+    top: -50px;
+    max-width: 40%;
+    padding: 10px;
+    height: 400px;
+}
+
+.blue_youtubeContainer h4 {
+    display: inline-block;
+    color: #0939aa;
+    /*文字色*/
+    /*線の種類（点線）2px 線色*/
+    border-bottom: dotted 2px #2c569b;
+    padding: 0 5px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.blue_youtubeContainer p {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.favo_foreign:link {
+    color: #3c5ec5;
+    text-decoration: none;
+}
+
+.favo_foreign:active {
+    color: #3737b1;
+    text-decoration: none;
+}
+
+.favo_foreign:hover {
+    color: #3a57ad;
+    text-decoration: none;
+}
+
+.favo_foreign:visited {
+    color: #1d1d70;
+    text-decoration: none;
+}
+
+.blue_youtubeContainer div {
+    width: 90%;
+    margin: auto;
+}
+
+.youtube.arona {
+    width: min(90%, 400px);
+    padding-top: min(50.6%, 225px);
+    margin: 20px auto;
+}
+
+.ytContainer.short {
+    text-align: left;
+    margin: 10px auto;
+    align-items: flex-start;
+}
+
+.blue_youtubeContainer div .youtube.short {
+    position: relative;
+    top: -40px;
+    margin-left: 50px;
+    min-width: 225px;
+    padding-top: 400px;
+}
+
+.youtube.short img {
+    width: 100%;
+    ;
+    height: 100%;
+    object-fit: cover;
+}
+
+.deriContainer p {
+    width: 90%;
+    margin: 10px auto;
+}
+
+.deri_p {
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.indent {
+    margin-left: 20px;
+}
+
+
+/* reference */
+
+.foreign {
+    display: flex;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    /*角の丸み*/
+    border: 2px solid #4364a1;
+    transition: all .3s;
+}
+
+.f_wrap {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.foreign a {
+    color: #000;
+    display: block;
+    padding: 5px 20px;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+.foreign a:visited {
+    color: #161672;
+}
+
+
+/*pc用*/
+
+@media(min-width: 767px) {
+    .nav_list:hover .dropdown_lists {
+        visibility: visible;
+        opacity: 1;
+    }
+    .nav_list:hover a {
+        color: #fff;
+    }
+    .nav_list:hover {
+        background-color: #93a5b1;
+    }
+    .dropdown_list:hover {
+        background-color: #003558;
+    }
+    .foreign:hover {
+        background-color: rgba(55, 162, 237, .1);
+        transform: translateY(-4px);
+        box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, .1);
+    }
+    .blue_profile:hover {
+        background-color: rgba(55, 162, 237, .1);
+        transform: translateY(-4px);
+        box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, .1);
+    }
+}
+
+@media(max-width: 852px) {
+    .ytContainer {
+        display: block;
+        margin: 0 20px;
+        gap: 20px;
+    }
+    .ytContainer .youtube {
+        min-width: 0%;
+        max-width: 100%;
+        width: min(80%, 400px);
+    }
+    .ytContainer .musicPromotion {
+        max-width: min(80%, 400px);
+        position: relative;
+        width: 100%;
+        margin: 0 auto 40px auto;
+    }
+    .youtube {
+        position: relative;
+        width: 100%;
+        left: 0;
+        padding-top: min(45%, 225px);
+        margin: 0 auto 20px auto;
+        overflow: hidden;
+    }
+    .youtube iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    .blue_youtubeContainer div .youtube.short {
+        top: 0;
+        margin: 10px auto;
+        width: 225px;
+        padding-top: 400px;
+    }
+}
+
+
+/* モバイル対応 */
+
+@media(max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+    main {
+        max-width: 90%;
+    }
+    main h2 {
+        font-size: 25px;
+    }
+    /* header */
+    .header {
+        visibility: hidden;
+    }
+    .header.active {
+        visibility: visible;
+    }
+    .nav_wrap {
+        padding: 0;
+        position: relative;
+        top: -180px;
+        transition: top 0.3s ease;
+        z-index: 3;
+    }
+    .nav_wrap.active {
+        top: 0;
+    }
+    .nav_wrap.active .d_nav {
+        /*ナビの数が増えた場合縦スクロール*/
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100vh;
+        /*表示する高さ*/
+        overflow: auto;
+    }
+    .nav_lists {
+        position: relative;
+        display: block;
+        z-index: 2;
+    }
+    .nav_list {
+        width: 100%;
+        top: 0;
+        transition: all .3s;
+    }
+    .nav_list.blue.ha,
+    .nav_list.ref.ha {
+        top: 240px;
+    }
+    .nav_list.ref.ba {
+        top: 480px;
+    }
+    .nav_list.ref.ha.ba {
+        top: 720px;
+    }
+    .nav_list.active .dropdown_lists {
+        visibility: visible;
+    }
+    .nav_list:not(:first-child)::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .3s;
+    }
+    .dropdown_lists {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        border-top: 1px solid #FFF;
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        transition: all .3s;
+        z-index: -1;
+    }
+    .dropdown_lists.blue {
+        z-index: -2;
+    }
+    .dropdown_lists.home {
+        top: -240px;
+    }
+    .dropdown_lists.blue {
+        top: -480px;
+    }
+    .dropdown_lists.active {
+        top: 0;
+    }
+    .dropdown_list {
+        background-color: #F0F8FF;
+    }
+    .dropdown_list a {
+        color: #1b4059;
+    }
+    .dropdown_list:not(:first-child)::before {
+        background-color: #FFF;
+    }
+    .dropdown_list a::before {
+        display: none;
+    }
+    .hamburger1 {
+        display: block;
+        z-index: 120;
+    }
+    .has-child::before {
+        display: block;
+    }
+    .has-child.active::before {
+        top: 26px;
+        transform: rotate(-45deg);
+    }
+    .child-wrap {
+        display: block;
+        opacity: 0.1;
+    }
+    /* index.html */
+    .hero.index {
+        font-size: 2em;
+        padding: 80px 0;
+    }
+    .profile-info {
+        width: 90%;
+    }
+    .profile-info tr {
+        display: block;
+        float: left;
+    }
+    .profile-info th,
+    .profile-info td {
+        width: auto;
+    }
+    .profile-info tr td,
+    .profile-info tr th {
+        padding: 15px;
+        display: block;
+    }
+    .profile-info thead {
+        display: block;
+        float: left;
+        width: 45%;
+    }
+    .profile-info thead tr {
+        width: 100%;
+    }
+    .profile-info tbody {
+        display: block;
+        float: left;
+        width: 55%;
+    }
+    .profile-info tbody tr {
+        width: 100%;
+    }
+    /* favorite.html */
+    #ytPlayerWrap {
+        top: 0;
+        padding-bottom: 56.25%;
+    }
+    .hero.favorite {
+        font-size: 1.4em;
+        border-top: 1px solid #FFF;
+        height: 23%;
+    }
+    .what-flex {
+        display: block;
+        text-align: center;
+        justify-content: center;
+        margin: 0 10px;
+        gap: 20px;
+    }
+    .what-flex img,
+    .what-p {
+        max-width: 100%;
+    }
+    .ytContainer .youtube {
+        min-width: 0%;
+        max-width: 100%;
+        width: min(90%, 400px);
+        padding-top: min(50.625%, 225px);
+    }
+    .musicTitle {
+        margin-bottom: 20px;
+    }
+    .twitter-flex {
+        display: block;
+    }
+    .twitter-flex p{
+		max-width: 80%;
+		margin: 0 auto;
+	}
+	.timeline{
+		top: 0;
+		max-width:80%;
+		width: 600px;
+		margin: 0 auto 10px auto;
+	}
+
+}
+/* スマホ表示でメニュー項目が崩れないようにする */
+.nav_wrap.active .nav_lists {
+    display: block;
+}
+
+.nav_wrap.active .nav_list {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+    .nav_wrap.active .nav_list a {
+        padding: 20px 0;
+        font-size: 18px;
+    }
+
+.nav_wrap.active .dropdown_lists {
+    max-height: 1000px; /* アニメーション対応なら調整 */
+}
+
+.nav_wrap .dropdown_list {
+    height: auto;
+    padding: 10px 0;
+}
+/* スマホ画面用の調整 */
+@media screen and (max-width: 767px) {
+    #ytPlayerWrap {
+      height: 50vh; /* スマホで少し低めにする（調整可） */
+    }
+  
+    .hero.favorite {
+      font-size: 1.4em;
+      height: auto;
+      padding: 1em;
+      background-size: cover;
+      z-index: 2;
+      position: relative;
+    }
+  }
